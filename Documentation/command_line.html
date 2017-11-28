@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Code generator</title>
+	<style type="text/css">
+	<!--
+	* {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		margin: 10px;
+	}
+	h1 {
+		font-size: 20px;
+		margin: 10px 0;
+	}
+	h2 {
+		font-size: 16px;
+		margin: 5px 0;
+	}
+	table {
+		margin: 15px auto;
+		border: solid 1px #333333;
+	}
+	th, td {
+		padding: 5px;
+		text-align: left;
+		background-color: #f5f5f5;
+		vertical-align: top;
+	}
+	-->
+	</style>
+</head>
+<body>
+	<h1>CoDAL</h1>
+	<h2>Command Line Switches</h2>
+	<table cellspacing="1">
+		<tr>
+			<th>Switch</th>
+			<th>Description</th>
+			<th>Required</th>
+		</tr>
+		<tr>
+			<td>/S</td>
+			<td>Name of the SQL Server</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>/D</td>
+			<td>Name of the database</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>/U</td>
+			<td>SQL Server username.  If this is not provided, then Windows authentication is assumed.</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>/P</td>
+			<td>SQL Server password.  If this is not provided, then Windows authentication is assumed.</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>/N</td>
+			<td>The namespace to use for generated classes.  If this is not provided then the database name is used.</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>/GP</td>
+			<td>The path to generate C# classes.</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>/SP</td>
+			<td>The path to generate C# skeleton classes.  The skeleton classes are generated once, after which they will not be overwritten.  If no value is specified, then the skeleton classes are saved in the same folder as the other generated classes.</td>
+			<td>No</td>
+		</tr>
+	</table>
+</body>
+</html>
