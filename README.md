@@ -1,0 +1,2 @@
+# codal
+Simple C# ORM
