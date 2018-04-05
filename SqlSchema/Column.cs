@@ -82,6 +82,7 @@ namespace MillsSoftware.SqlSchema
 				case "char":
 					return SqlDbType.Char;
 				case "datetime":
+				case "datetime2":
 					return SqlDbType.DateTime;
 				case "decimal":
 					return SqlDbType.Decimal;
