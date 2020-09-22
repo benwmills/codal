@@ -500,7 +500,7 @@ namespace MillsSoftware.CoDAL
 //					cb.WriteLine(2, "/// " + objColumn.Description);
 //					cb.WriteLine(2, "/// </summary>");
 //				}
-			    string DisplayName = objColumn.SplitNameIntoWords();
+			    string DisplayName = !string.IsNullOrWhiteSpace(objColumn.Description) ? objColumn.Description : objColumn.SplitNameIntoWords();
                 if (DisplayName != objColumn.Name) cb.WriteLine(2, "[DisplayName(\"" + DisplayName + "\")]");
 				cb.WriteLine(2, "public virtual " + objColumn.GetCSharpType() + " " + objColumn.Name);
 				cb.WriteLine(2, "{");
