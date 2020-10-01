@@ -1032,12 +1032,13 @@ namespace MillsSoftware.CoDAL
 
 					cb.RemoveLastCharacters(2);
 
+					cb.Write(", bool throwErrorIfNoResult = true");
 					cb.WriteLine(")");
-					cb.WriteLine(2, "{");
+                    cb.WriteLine(2, "{");
 					cb.WriteLine(3, "SqlConnection con;");
 					cb.WriteLine(3, "SqlCommand cmd;");
 					cb.WriteLine(3, "SqlDataReader reader;");
-					cb.WriteLine(3, table.Name + " obj" + table.Name + ";");
+					cb.WriteLine(3, table.Name + " obj" + table.Name + " = null;");
 					cb.WriteLine("");
 					cb.WriteLine(3, "con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings[\"codal\"].ConnectionString);");
 					cb.WriteLine(3, "cmd = new SqlCommand(\"" + sp.Name + "\", con);");
@@ -1056,7 +1057,7 @@ namespace MillsSoftware.CoDAL
 					cb.WriteLine(3, "if (reader.Read())");
 //					cb.WriteLine(4, "obj" + table.Name + " = new " + table.Name + " (reader);");
 					cb.WriteLine(4, "obj" + table.Name + " = " + table.Name + ".GetInstance(reader);");
-					cb.WriteLine(3, "else");
+					cb.WriteLine(3, "else if (throwErrorIfNoResult)");
 					cb.WriteLine(3, "{");
 					cb.WriteLine(4, "reader.Close();");
 					cb.WriteLine(4, "con.Close();");
