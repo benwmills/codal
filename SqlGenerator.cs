@@ -66,7 +66,7 @@ namespace MillsSoftware.CoDAL
 			cb.WriteLine("");
 			cb.WriteLine(") AS");
 			cb.WriteLine("");
-			cb.Write("INSERT INTO " + table.Name + " (");
+			cb.Write("INSERT INTO [" + table.Name + "] (");
 
 			FirstField = true;
 
@@ -154,7 +154,7 @@ namespace MillsSoftware.CoDAL
 			cb.WriteLine(") AS");
 			cb.WriteLine("");
 
-			cb.WriteLine("UPDATE " + table.Name + " SET");
+			cb.WriteLine("UPDATE [" + table.Name + "] SET");
 
 			FirstField = true;
 
@@ -238,7 +238,7 @@ namespace MillsSoftware.CoDAL
 			cb.WriteLine(1, "@OriginalUpdated DateTime");
 			cb.WriteLine(") AS");
 			cb.WriteLine("");
-			cb.WriteLine("DELETE FROM " + table.Name);
+			cb.WriteLine("DELETE FROM [" + table.Name + "]");
 			cb.Write(1, "WHERE ");
 
 			FirstField = true;
